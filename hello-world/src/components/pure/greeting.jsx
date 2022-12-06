@@ -20,14 +20,28 @@ class Greeting extends Component {
                 <h2>
                     Soy H2, tu edad es { this.state.age } !
                 </h2>
+                <div>
+                    <button onClick={this.birthday}>
+                        Add age
+                    </button>
+                </div>
             </div>
         );
+    }
+
+    birthday = () =>{
+        this.setState( (prevState) => (
+            {
+                age:prevState.age + 1
+            }
+                
+            )) 
     }
 }
 
 
 Greeting.propTypes = {
-
+    name: PropTypes.string,
 };
 
 
